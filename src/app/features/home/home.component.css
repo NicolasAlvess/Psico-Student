@@ -1,51 +1,78 @@
 :host {
-  /* Faz o componente ocupar toda a altura da tela, menos a navbar */
   display: block;
-  min-height: calc(100vh - 56px); /* 56px é a altura padrão da navbar */
-
-  /* Configuração do plano de fundo */
-  background-image: url("../../../assets/images/fundo-home.png");
+  min-height: calc(100vh - 56px);
+  background-image: url('../../../assets/images/fundo-home.png');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-
-  /* Centraliza o card de boas-vindas na tela */
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2rem;
+  padding: 2rem 1rem; /* Padding lateral menor para celular */
   position: relative;
 }
 
-/* Sobreposição escura para melhorar o contraste */
 :host::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Preto com 50% de opacidade */
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
-/* Garante que o conteúdo fique na frente da sobreposição */
 .container {
   position: relative;
   z-index: 2;
 }
 
 .welcome-card {
-  /* EFEITO "VIDRO FOSCO" */
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.18);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-
-  /* Estilo do texto dentro do card */
   color: white;
+
+  /* AJUSTES PARA RESPONSIVIDADE (MOBILE FIRST) */
+  padding: 2rem 1.5rem !important; /* Padding interno do card menor para celular */
+  max-width: 90%; /* Limita a largura do card em 90% da tela */
 }
 
 .welcome-card h1 {
   font-weight: bold;
+  font-size: 2rem; /* Tamanho de fonte menor para o título em celular */
+  line-height: 1.2; /* Espaçamento de linha ajustado */
+}
+
+.welcome-card p {
+  font-size: 0.95rem; /* Tamanho de fonte um pouco menor para parágrafos */
+  line-height: 1.5;
+}
+
+.welcome-card .btn {
+  font-size: 1rem; /* Tamanho do botão */
+  padding: 0.8rem 1.5rem;
+}
+
+
+/* Media Query para telas maiores (tablets e desktops) */
+@media (min-width: 768px) {
+  :host {
+    padding: 2rem; /* Padding padrão para desktop */
+  }
+
+  .welcome-card {
+    padding: 3rem !important; /* Padding maior para desktop */
+    max-width: 700px; /* Largura máxima para o card em desktop */
+  }
+
+  .welcome-card h1 {
+    font-size: 3.5rem; /* Tamanho de fonte maior para o título em desktop */
+  }
+
+  .welcome-card p {
+    font-size: 1.25rem; /* Tamanho de fonte maior para parágrafos em desktop */
+  }
 }
