@@ -1,0 +1,51 @@
+/* Container principal da página do mapa mental */
+.container-fluid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Espaçamento menor para celular */
+  padding: 1.5rem 1rem;
+  min-height: 100vh;
+  background-image: url("../../../assets/images/fundo.png");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+h1 {
+  color: #ffffff;
+  font-weight: bold;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+  margin-bottom: 1.5rem;
+  padding-top: 4rem; /* Espaço para não ficar atrás da navbar */
+  text-align: center; /* Garante o alinhamento em telas pequenas */
+}
+
+/* O contêiner "vidro fosco" */
+.mind-map-root {
+  width: 100%;
+  max-width: 1200px;
+  /* Espaçamento menor para celular */
+  padding: 1.5rem;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+/* Media Query: Para telas com 768px de largura ou mais (tablets e desktops) */
+@media (min-width: 768px) {
+  .container-fluid {
+    /* Retorna ao espaçamento maior em telas grandes */
+    padding: 2.5rem;
+  }
+  .mind-map-root {
+    padding: 2rem;
+  }
+  h1 {
+    padding-top: 2.5rem;
+  }
+}

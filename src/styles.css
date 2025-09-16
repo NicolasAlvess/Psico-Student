@@ -1,1 +1,13 @@
-/* You can add global styles to this file, and also import other style files */
+/* Deixa a navbar com o efeito de vidro fosco */
+.navbar {
+  background: rgba(25, 29, 33, 0.6); /* Cor escura com 60% de opacidade */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body {
+  /* Define a cor de fundo de TODA a aplicação para um tom escuro,
+     o mesmo da sua navbar. */
+  background-color: #212529;
+}

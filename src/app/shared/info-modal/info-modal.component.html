@@ -1,0 +1,31 @@
+<div class="modal-backdrop" (click)="onClose()"></div>
+<div class="modal-content" *ngIf="node">
+  <div class="modal-header">
+    <h5 class="modal-title">{{ node.label }}</h5>
+    <button
+      type="button"
+      class="btn-close"
+      aria-label="Close"
+      (click)="onClose()"
+    ></button>
+  </div>
+  <div class="modal-body">
+    <img
+      *ngIf="node.imageUrl"
+      [src]="node.imageUrl"
+      class="img-fluid mb-3"
+      alt="Imagem de {{ node.label }}"
+    />
+
+    <h5 *ngIf="node.contentTitle" class="content-title">
+      {{ node.contentTitle }}
+    </h5>
+
+    <p *ngIf="node.details">{{ node.details }}</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="onClose()">
+      Fechar
+    </button>
+  </div>
+</div>
