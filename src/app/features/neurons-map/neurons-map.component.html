@@ -1,0 +1,16 @@
+<div class="container-fluid">
+  <h1 class="text-center">MAPA MENTAL DOS NEURÔNIOS</h1>
+
+  <div class="mind-map-root grid-layout">
+    <app-mind-map-node
+      [node]="rootNode"
+      [level]="0"
+      [isNodeExpanded]="expandedNodes.has(rootNode.id)"
+      [childrenExpandedStatus]="expandedNodes"
+      (toggleExpand)="toggleNode($event)"
+      (showDetails)="openInfoModal($event)">
+    </app-mind-map-node>
+  </div>
+</div>
+
+<app-info-modal *ngIf="selectedNode" [node]="selectedNode" (closeModal)="closeInfoModal()"></app-info-modal>

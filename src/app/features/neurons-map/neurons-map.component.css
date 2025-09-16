@@ -1,0 +1,41 @@
+/* Arquivo: src/app/features/neurons-map/neurons-map.component.css */
+.container-fluid {
+  display: flex; flex-direction: column; align-items: center;
+  padding: 2.5rem 1rem; min-height: 100vh;
+  background-image: url('../../../assets/images/fundo.png');
+  background-size: cover; background-position: center center;
+  background-repeat: no-repeat; background-attachment: fixed;
+}
+h1 {
+  color: #FFFFFF; font-weight: bold; text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+  margin-bottom: 2rem;
+}
+.mind-map-root {
+  width: 100%; max-width: 1200px; padding: 2rem; border-radius: 16px;
+  background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+@media (min-width: 768px) {
+  .container-fluid { padding: 2.5rem; }
+  h1 { padding-top: 2.5rem; }
+  .mind-map-root { padding: 2rem; }
+}
+
+/* Estilo especial para o layout em grid do mapa de neurônios */
+.grid-layout .children-list.horizontal-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Cria 2 colunas de tamanho igual */
+  gap: 2.5rem; /* Espaçamento entre os cards */
+  justify-items: center; /* Centraliza os cards dentro das colunas */
+  
+  /* Removemos a regra de flexbox para usar o grid */
+  align-items: initial;
+}
+
+/* Pequeno ajuste para os cards dentro do grid */
+.grid-layout .children-list > li {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
