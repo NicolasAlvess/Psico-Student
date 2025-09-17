@@ -8,13 +8,35 @@
   min-height: calc(100vh - 56px); /* Altura da tela menos a navbar */
 }
 
+/* Arquivo: src/app/features/quiz/quiz.component.css */
+
 .quiz-container {
   max-width: 800px;
   margin: 4rem auto;
-  padding: 2rem;
-  background: #fff;
+  padding: 2.5rem; /* Um pouco mais de padding */
+  background: rgba(255, 255, 255, 0.1); /* Fundo translúcido */
   border-radius: 15px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2); /* Sombra mais intensa */
+  backdrop-filter: blur(10px); /* Efeito de vidro */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Borda sutil de vidro */
+  color: white; /* Texto principal do quiz em branco */
+}
+
+.quiz-header h2,
+.question-card h4 {
+  color: white; /* Garante que os títulos fiquem brancos */
+}
+
+/* Ajustes de cor para os botões de opção */
+.option-btn {
+  border: 2px solid rgba(255, 255, 255, 0.3); /* Borda mais suave */
+  background-color: rgba(255, 255, 255, 0.1); /* Fundo translúcido */
+  color: white; /* Texto do botão em branco */
+}
+
+.option-btn:not([disabled]):hover {
+  background-color: rgba(255, 255, 255, 0.2); /* Hover mais visível */
+  border-color: rgba(255, 255, 255, 0.5); /* Borda no hover */
 }
 .quiz-header {
   text-align: center;
@@ -26,8 +48,10 @@
 .quiz-progress {
   display: flex;
   justify-content: space-between;
-  color: #666;
+  color: #ffffff; /* COR ALTERADA PARA BRANCO */
   font-weight: bold;
+  font-size: 1.1rem; /* Aumenta um pouco o tamanho */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6); /* SOMBRA PARA LEGIBILIDADE */
 }
 .question-card h4 {
   margin-bottom: 1.5rem;

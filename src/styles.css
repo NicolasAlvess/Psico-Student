@@ -1,6 +1,6 @@
 /* Deixa a navbar com o efeito de vidro fosco */
 .navbar {
-  background: rgba(25, 29, 33, 0.6); /* Cor escura com 60% de opacidade */
+  background: rgba(83, 86, 90, 0.6); /* Cor escura com 60% de opacidade */
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -10,4 +10,28 @@ body {
   /* Define a cor de fundo de TODA a aplicação para um tom escuro,
      o mesmo da sua navbar. */
   background-color: #212529;
+}
+
+/* --- ESTILO PARA DESTAQUE DOS LINKS DA NAVBAR --- */
+
+/* Estilo base para todos os links da navbar */
+.navbar .nav-link {
+  color: rgba(255, 255, 255, 0.8); /* Branco um pouco mais suave */
+  padding: 0.5rem 1rem;
+  margin: 0 0.25rem;
+  border-radius: 8px; /* Cantos levemente arredondados */
+  transition: all 0.2s ease-in-out;
+}
+
+/* Efeito ao passar o mouse sobre um link (que não seja o ativo) */
+.navbar .nav-link:not(.active):hover {
+  color: #ffffff; /* Branco total */
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ESTILO DE DESTAQUE PARA O LINK DA PÁGINA ATUAL */
+.navbar .nav-link.active {
+  color: #ffffff; /* Branco total */
+  font-weight: 600; /* Levemente mais forte (semi-bold) */
+  background-color: rgba(255, 255, 255, 0.15); /* Fundo um pouco mais visível */
 }
