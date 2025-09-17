@@ -6,10 +6,13 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+/* Arquivo: src/styles.css */
+
 body {
-  /* Define a cor de fundo de TODA a aplicação para um tom escuro,
-     o mesmo da sua navbar. */
   background-color: #212529;
+  /* Espaçamento para a navbar fixa no topo E para o footer fixo embaixo */
+  padding-top: 56px;      /* Altura da navbar */
+  padding-bottom: 70px;   /* Altura aproximada do footer - ESTA LINHA CORRIGE O PROBLEMA */
 }
 
 /* --- ESTILO PARA DESTAQUE DOS LINKS DA NAVBAR --- */
