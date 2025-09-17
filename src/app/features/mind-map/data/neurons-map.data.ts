@@ -12,7 +12,7 @@ export const neuronsMapData: MindMapNode = {
       id: 'corpo_celular',
       label: 'Corpo Celular (Soma)',
       details: 'O centro metabólico do neurônio, onde o núcleo e a maior parte do citoplasma estão localizados. Integra os sinais recebidos.',
-      imageUrl: 'assets/images/corpo-celular.png',
+      imageUrl: 'assets/images/soma.png',
       children: [
         { id: 'nucleo', label: 'Núcleo', details: 'Contém o material genético (DNA) da célula e controla as atividades do neurônio.', imageUrl: 'assets/images/nucleo.png' },
       ]
