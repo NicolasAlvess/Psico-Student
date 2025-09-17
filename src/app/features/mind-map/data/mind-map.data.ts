@@ -160,7 +160,7 @@ Motores:      SNC → Corpo   = Execução de movimentos ou ações
           label: 'Divisão Autônoma',
           details:
             'Controla funções involuntárias, como batimentos cardíacos, digestão e respiração.',
-          imageUrl: 'assets/images/autonomo.png',
+          imageUrl: 'assets/images/autonoma.png',
           children: [
             {
               id: 'simpatica',
