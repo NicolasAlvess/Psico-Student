@@ -13,7 +13,7 @@
 .quiz-container {
   width: 100%; /* Ocupa quase toda a tela no celular */
   max-width: 500px; /* Limite para celulares grandes */
-  margin: 1rem auto;
+  margin: 4rem auto;
   padding: 1.5rem; /* Padding interno menor */
   background: rgba(255, 255, 255, 0.1);
   border-radius: 15px;
