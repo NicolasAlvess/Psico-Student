@@ -29,7 +29,7 @@ export const neuronsMapData: MindMapNode = {
       details: 'Um prolongamento longo e fino que transmite os impulsos nervosos do corpo celular para outros neurônios, músculos ou glândulas.',
       imageUrl: 'assets/images/axonio.png',
       children: [
-        { id: 'bainha_mielina', label: 'Bainha de Mielina', details: 'Uma camada isolante de gordura que envolve o axônio, permitindo que o impulso elétrico viaje muito mais rápido.', imageUrl: 'assets/images/bainha-mielina.png' },
+        { id: 'bainha_mielina', label: 'Bainha de Mielina', details: 'Uma camada isolante de gordura que envolve o axônio, permitindo que o impulso elétrico viaje muito mais rápido.', imageUrl: 'assets/images/mielina.png' },
         { id: 'nodulos_ranvier', label: 'Nódulos de Ranvier', details: 'Pequenos espaços na bainha de mielina onde o impulso elétrico é "recarregado", permitindo a condução saltatória.', imageUrl: 'assets/images/nodulos-ranvier.png' },
         { id: 'terminal_axonio', label: 'Terminal do Axônio', details: 'A extremidade do axônio que libera neurotransmissores para comunicar-se com o próximo neurônio.', imageUrl: 'assets/images/terminal-axonio.png' },
       ]

@@ -16,7 +16,7 @@
 h1 {
   color: #ffffff;
   font-weight: bold;
-  text-shadow: 1px 1px 4px rgba(245, 13, 13, 0.7);
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
   margin-bottom: 1.5rem;
   padding-top: 4rem; /* Espaço para não ficar atrás da navbar */
   text-align: center; /* Garante o alinhamento em telas pequenas */
