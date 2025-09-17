@@ -1,87 +1,68 @@
-/* --- ESTILOS GERAIS E DE FUNDO --- */
 :host {
-  display: block;
-  padding: 1rem; /* Espaçamento menor para celular */
+  /* 1. Transforma a página em um container flexível */
+  display: flex;
+  justify-content: center; /* Centraliza o card na horizontal */
+  align-items: center;     /* Centraliza o card na vertical */
+
+  /* 2. Garante que a página ocupe toda a tela (menos a navbar) */
+  box-sizing: border-box;
+  min-height: calc(100vh - 56px);
+
+  /* 3. Adiciona um padding geral para que o card nunca cole nas bordas */
+  padding: 2rem 1rem;
+
+  /* 4. Mantém o fundo que já funciona */
   background-image: url('../../../assets/images/fundo-quiz.png');
   background-size: cover;
   background-position: center;
-  min-height: calc(100vh - 56px);
 }
 
-/* --- ESTILOS BASE (MOBILE FIRST) --- */
-
+/* O card de vidro fosco */
 .quiz-container {
-  width: 100%; /* Ocupa quase toda a tela no celular */
-  max-width: 500px; /* Limite para celulares grandes */
-  margin: 4rem auto;
-  padding: 1.5rem; /* Padding interno menor */
-  background: rgba(255, 255, 255, 0.1);
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto; /* Apenas para garantir */
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.15); /* Um pouco mais opaco para legibilidade */
   border-radius: 15px;
   box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   color: white;
+
+  /* Para o caso extremo de uma tela muito pequena, a rolagem acontecerá DENTRO do card */
+  max-height: calc(100vh - 56px - 4rem);
+  overflow-y: auto;
 }
 
-.quiz-header h2 {
-  color: white;
-  text-align: center;
-}
-
+/* O resto do código continua o mesmo, mas está incluído aqui para garantir */
+.quiz-header h2 { font-size: 1.3rem; text-align: center; color: white; }
 .quiz-progress {
-  /* No celular, os itens ficam empilhados e centralizados */
-  display: block;
-  text-align: center;
-  color: #FFFFFF;
-  font-weight: bold;
-  font-size: 1rem; /* Fonte um pouco menor */
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  display: block; text-align: center; color: #FFFFFF;
+  font-weight: bold; font-size: 0.9rem; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
   margin-bottom: 1rem;
 }
-.quiz-progress span {
-  display: block; /* Garante que fiquem um em cima do outro */
-}
-
+.quiz-progress span { display: block; }
 .question-card h4 {
-  color: white;
-  font-size: 1.2rem; /* Fonte da pergunta menor */
-  line-height: 1.4;
-  margin-bottom: 1.5rem;
-  text-align: center;
+  color: white; font-size: 1.1rem; line-height: 1.4;
+  margin-bottom: 1rem; text-align: center;
 }
-
-.options-container { display: grid; gap: 0.8rem; } /* Espaço menor entre opções */
-
+.options-container { display: grid; gap: 0.5rem; }
 .option-btn {
-  width: 100%;
-  padding: 0.8rem; /* Botões com menos padding */
-  font-size: 0.9rem; /* Fonte menor nas opções */
-  text-align: left;
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  background-color: rgba(255, 255, 255, 0.1);
-  color: white;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.2s ease;
+  width: 100%; padding: 0.7rem; font-size: 0.85rem; text-align: left;
+  border: 2px solid rgba(255, 255, 255, 0.3); background-color: rgba(255, 255, 255, 0.1);
+  color: white; border-radius: 8px; cursor: pointer; transition: all 0.2s ease;
 }
 .option-btn:not([disabled]):hover { background-color: rgba(255, 255, 255, 0.2); border-color: rgba(255, 255, 255, 0.5); }
 .option-btn:disabled { cursor: not-allowed; opacity: 0.7; }
-
-.quiz-footer { text-align: center; margin-top: 1.5rem; }
-
+.quiz-footer { text-align: center; margin-top: 1rem; }
 .next-btn, .restart-btn {
-  padding: 0.8rem 2rem;
-  font-size: 1rem;
-  font-weight: bold;
-  border-radius: 50px;
-  border: none;
-  cursor: pointer;
-  background-color: #0d6efd;
-  color: white;
-  transition: background-color 0.2s ease;
+  padding: 0.7rem 1.8rem; font-size: 1rem; font-weight: bold;
+  border-radius: 50px; border: none; cursor: pointer;
+  background-color: #0d6efd; color: white; transition: background-color 0.2s ease;
 }
 .next-btn:hover, .restart-btn:hover { background-color: #0b5ed7; }
-
 .results-card { text-align: center; }
 .final-score { font-size: 3rem; font-weight: bold; color: #FFFFFF; text-shadow: 1px 1px 3px rgba(0,0,0,0.5); margin: 1rem 0 2rem 0; }
 .correct { background-color: #198754 !important; color: white !important; border-color: #198754 !important; }
@@ -89,31 +70,12 @@
 
 /* === MEDIA QUERY PARA TELAS GRANDES (TABLET/DESKTOP) === */
 @media (min-width: 768px) {
-  :host {
-    padding: 2rem; /* Volta o padding maior */
-  }
-
-  .quiz-container {
-    max-width: 800px; /* Volta a largura máxima maior */
-    margin: 4rem auto;
-    padding: 2.5rem;
-  }
-
-  .quiz-progress {
-    display: flex; /* Volta a ser lado a lado */
-    justify-content: space-between;
-    font-size: 1.1rem;
-  }
-  .quiz-progress span {
-    display: inline;
-  }
-
-  .question-card h4 {
-    font-size: 1.4rem; /* Volta a fonte maior */
-  }
-  
-  .option-btn {
-    padding: 1rem; /* Volta o padding maior */
-    font-size: 1rem;
-  }
+  .quiz-container { padding: 2.5rem; }
+  .quiz-header h2 { font-size: 1.5rem; }
+  .quiz-progress { display: flex; justify-content: space-between; font-size: 1.1rem; }
+  .quiz-progress span { display: inline; }
+  .question-card h4 { font-size: 1.4rem; }
+  .options-container { gap: 1rem; }
+  .option-btn { padding: 1rem; font-size: 1rem; }
+  .next-btn, .restart-btn { padding: 0.8rem 2rem; font-size: 1.1rem; }
 }

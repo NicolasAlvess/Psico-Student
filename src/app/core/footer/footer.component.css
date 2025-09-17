@@ -1,0 +1,33 @@
+.footer-custom {
+  /* Fixa o footer na parte inferior da tela */
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1030;
+
+  /* Efeito de vidro fosco */
+  background: rgba(35, 40, 46, 0.75); /* Cor escura com mais opacidade que a navbar */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+  /* Estilo do texto */
+  color: rgba(255, 255, 255, 0.7);
+  padding: 0.8rem 0;
+  font-size: 0.9rem;
+}
+
+.footer-custom a {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-custom a:hover {
+  color: #FFFFFF;
+}
+
+.contact-links {
+  margin-top: 0.25rem;
+}

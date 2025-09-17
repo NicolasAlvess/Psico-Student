@@ -1,6 +1,6 @@
 /* Deixa a navbar com o efeito de vidro fosco */
 .navbar {
-  background: rgba(83, 86, 90, 0.6); /* Cor escura com 60% de opacidade */
+  background: rgba(21, 25, 29, 0.65);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
