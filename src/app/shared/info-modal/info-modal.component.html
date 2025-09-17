@@ -10,7 +10,12 @@
     ></button>
   </div>
   <div class="modal-body">
-    <img *ngIf="node.imageUrl" [src]="node.imageUrl" class="img-fluid mb-3" alt="Imagem de {{ node.label }}" loading="lazy">
+    <img
+      *ngIf="node.imageUrl"
+      [src]="node.imageUrl"
+      class="img-fluid mb-3"
+      alt="Imagem de {{ node.label }}"
+    />
 
     <h5 *ngIf="node.contentTitle" class="content-title">
       {{ node.contentTitle }}
