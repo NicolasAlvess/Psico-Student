@@ -1,0 +1,52 @@
+<div class="quiz-container">
+  <div *ngIf="!quizFinished && questions.length > 0">
+    <div class="quiz-header">
+      <h2>Quiz de Neuroanatomia</h2>
+      <div class="quiz-progress">
+        <span
+          >Pergunta {{ currentQuestionIndex + 1 }} de
+          {{ questions.length }}</span
+        >
+        <span>Pontuação: {{ score }}</span>
+      </div>
+    </div>
+
+    <div class="question-card">
+      <h4>{{ questions[currentQuestionIndex].questionText }}</h4>
+      <div class="options-container">
+        <button
+          *ngFor="let option of questions[currentQuestionIndex].options"
+          (click)="selectAnswer(option)"
+          class="option-btn"
+          [ngClass]="{
+            correct: answerChecked && option.correct,
+            incorrect:
+              answerChecked && selectedOption === option && !option.correct
+          }"
+          [disabled]="answerChecked"
+        >
+          {{ option.text }}
+        </button>
+      </div>
+    </div>
+
+    <div class="quiz-footer" *ngIf="answerChecked">
+      <button class="next-btn" (click)="nextQuestion()">
+        {{
+          currentQuestionIndex < questions.length - 1
+            ? "Próxima Pergunta"
+            : "Ver Resultado"
+        }}
+      </button>
+    </div>
+  </div>
+
+  <div *ngIf="quizFinished" class="results-card">
+    <h2>Quiz Finalizado!</h2>
+    <h3>Sua pontuação final é:</h3>
+    <p class="final-score">{{ score }} / {{ questions.length }}</p>
+    <button class="restart-btn" (click)="restartQuiz()">
+      Tentar Novamente
+    </button>
+  </div>
+</div>

@@ -5,27 +5,32 @@
     (click)="onNodeClick()"
   >
     <div class="card-body p-2 text-center">
-      <span>{{ node.label }}</span>
-      <button
-        *ngIf="node.details"
-        class="info-btn"
-        (click)="onShowDetailsClick($event)"
-        aria-label="Saber mais"
-      >
-        Saber mais
-      </button>
-      <span
-        *ngIf="node.children && node.children.length > 0"
-        class="toggle-icon"
-      >
-        {{ isNodeExpanded ? " -" : " +" }}
-      </span>
+      <span class="node-label">{{ node.label }}</span>
+
+      <div class="card-actions">
+        <button
+          *ngIf="node.details"
+          class="info-btn"
+          (click)="onShowDetailsClick($event)"
+          aria-label="Saber mais"
+        >
+          Saber mais
+        </button>
+
+        <span
+          *ngIf="node.children && node.children.length > 0"
+          class="toggle-icon"
+        >
+          {{ isNodeExpanded ? " -" : " +" }}
+        </span>
+      </div>
     </div>
   </div>
 
   <ul
     class="children-list"
     [class.horizontal-list]="level === 0"
+    [class.neuronio-children]="node.id === 'neuronio'"
     *ngIf="node.children && isNodeExpanded"
   >
     <li *ngFor="let childNode of node.children">
